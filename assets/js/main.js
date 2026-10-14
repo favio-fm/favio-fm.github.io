@@ -41,6 +41,9 @@
     document.querySelectorAll("[data-cv]").forEach(function (a) {
       a.classList.toggle("is-suggested", a.getAttribute("data-cv") === lang);
     });
+    document.querySelectorAll('a[href^="assets/cv/CV_FavioFernandez"]').forEach(function (a) {
+      a.setAttribute("href", lang === "en" ? "assets/cv/CV_FavioFernandez_EN.pdf" : "assets/cv/CV_FavioFernandez.pdf");
+    });
     localStorage.setItem(STORAGE_KEY, lang);
     onLangChange.forEach(function (fn) { try { fn(); } catch (e) {} });
   }
